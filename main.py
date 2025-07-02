@@ -138,11 +138,10 @@ if use_example_button:
             st.info("🎧 Pobieram i analizuję przykładowe nagranie z Dysku Google...")
             response = requests.get(direct_url, timeout=60)
             response.raise_for_status()
-            
             audio_bytes = response.content
             content_type = response.headers.get('content-type', 'audio/mpeg')
-            
-            analyze_audio(audio_bytes, "przykladowe_nagranie.mp3", content_type)
+
+            analyze_audio(audio_bytes, "example.m4a", content_type)
 
     except requests.exceptions.RequestException as e:
         st.error(f"Błąd podczas pobierania przykładowego nagrania: {e}")
