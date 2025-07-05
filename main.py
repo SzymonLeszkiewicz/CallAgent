@@ -109,8 +109,6 @@ def analyze_audio(file_bytes, file_name, file_type):
                     st.success("✅ Rozmowa została pomyślnie przeanalizowana!")
                     st.markdown("---")
                     display_results(content_data)
-                    with st.expander("🔍 Zobacz pełną odpowiedź JSON"):
-                        st.json(result)
                 else: st.error("❌ Otrzymano dane, ale w nieoczekiwanym formacie."); st.json(result)
             else: st.error("❌ Otrzymano pustą lub nieprawidłową odpowiedź z serwera."); st.json(result)
         else:
